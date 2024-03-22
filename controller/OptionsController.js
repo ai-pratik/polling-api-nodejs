@@ -10,7 +10,7 @@ module.exports.create = async function (req, res) {
   });
   // it is for adding the vote to option of the id that is given by mongodb by update query and using the string interpolition
   const updateOpt = await Option.findByIdAndUpdate(opt._id, {
-    add_vote: `http://localhost:3034/api/vi/options/${opt._id}/add_vote`,
+    add_vote: `https://polling-api-nodejs.onrender.com/api/vi/options/${opt._id}/add_vote`,
   });
   updateOpt.save();
   // now searching the question so that we can append the option in question-->option array
